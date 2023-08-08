@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+.nav_link {
+  @apply -rotate-90 text-lg lg:text-xl;
+}
+
+.gradient_text:hover {
+  @apply bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text;
+}
+
+.wx130 {
+  width: 130%;
+  -webkit-filter: drop-shadow(0px 0px 1rem white);
+          filter: drop-shadow(0px 0px 1rem white);
+}
+
+.Github:hover {
+  color: #b8b8b8;
+  -webkit-filter: drop-shadow(0px 0px 4rem white);
+          filter: drop-shadow(0px 0px 4rem white);
+}
+
+.Facebook:hover {
+  color: #3b5998;
+  -webkit-filter: drop-shadow(0px 0px 4rem #6c9bffde);
+          filter: drop-shadow(0px 0px 4rem #6c9bffde);
+}
+
+.Twitter:hover {
+  color: #1da1f2;
+  -webkit-filter: drop-shadow(0px 0px 4rem #3ab3ffde);
+          filter: drop-shadow(0px 0px 4rem #3ab3ffde);
+}
+
+.Linkedin:hover {
+  color: #0077b5;
+  -webkit-filter: drop-shadow(0px 0px 4rem #69caffde);
+          filter: drop-shadow(0px 0px 4rem #69caffde);
+}
