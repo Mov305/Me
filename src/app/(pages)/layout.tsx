@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 // Components
 import Nav from '@/components/nav';
 // font
-import { dosis } from '@/utils/font';
+import { teko } from '@/utils/font';
 
 export const metadata: Metadata = {
   title: 'ABDELRHMAN (MOV)',
@@ -16,10 +16,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className='dark'>
-        <div className="flex flex-col items-center w-full dark:bg-[#212323] dark:text-[#ededed]">
+      <body className="">
+        {/* space gradient background */}
+        <div
+          className="flex flex-col items-center w-full text-slate-50 relative"
+          style={{
+            // space gradient background
+            background: 'fixed radial-gradient(#041f3d, #07070c)',
+          }}
+        >
           <Nav />
-          <main className={dosis.className}>{children}</main>
+          <main className={`relative md:pl-32 md:w-full z-0 ${teko.className}`}>{children}</main>
         </div>
       </body>
     </html>

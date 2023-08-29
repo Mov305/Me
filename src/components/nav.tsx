@@ -64,13 +64,13 @@ export default function Nav() {
   return (
     <nav
       className={
-        'flex sm:flex-col fixed top-0 left-0 dark:text-[#b9b6af] sm:min-h-screen sm:items-center pb-2 ' +
+        'flex sm:flex-col w-full sm:w-auto justify-around sm:justify-normal fixed z-10 top-0 left-0 dark:text-[#b9b6af] sm:min-h-screen sm:items-center pb-2 ' +
         lobster.className
       }
     >
       <div className=" flex items-center justify-between p-2 ">
         <div className="flex items-center flex-shrink-0">
-          <Link href="/">
+          <Link href="/#mov">
             <Image
               src="/profile.png"
               alt="Profile"
@@ -95,8 +95,8 @@ export default function Nav() {
           </Link>
         ))}
       </div>
-      <span className="block bg-slate-400/50 w-0.5 flex-grow my-10"></span>
-      <div className="flex sm:flex-col gap-4 items-center">
+      <span className="block bg-slate-400/50 w-0.5 sm:flex-grow my-10"></span>
+      <div className="flex justify-around justify-self-end sm:ml-0 sm:flex-col gap-4 items-center">
         {socials.map((social) => (
           <a
             href={social.href}
