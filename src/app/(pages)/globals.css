@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.nav_link {
+  @apply -rotate-90 text-lg lg:text-xl;
+}
+
+.gradient_text:hover {
+  @apply bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text;
+}
+.gradient_title {
+  @apply bg-gradient-to-br from-violet-600 via-cyan-500 to-teal-400 text-transparent bg-clip-text;
+}
+
+.gradient_btn {
+  @apply bg-gradient-to-r from-violet-600 via-cyan-500 to-teal-400 text-white;
+}
+
+.wx130 {
+  width: 130%;
+  -webkit-filter: drop-shadow(0px 0px 1rem white);
+  filter: drop-shadow(0px 0px 1rem white);
+}
+
+.Github:hover {
+  color: #b8b8b8;
+  -webkit-filter: drop-shadow(0px 0px 4rem white);
+  filter: drop-shadow(0px 0px 4rem white);
+}
+
+.Facebook:hover {
+  color: #3b5998;
+  -webkit-filter: drop-shadow(0px 0px 4rem #6c9bffde);
+  filter: drop-shadow(0px 0px 4rem #6c9bffde);
+}
+
+.Twitter:hover {
+  color: #1da1f2;
+  -webkit-filter: drop-shadow(0px 0px 4rem #3ab3ffde);
+  filter: drop-shadow(0px 0px 4rem #3ab3ffde);
+}
+
+.Linkedin:hover {
+  color: #0077b5;
+  -webkit-filter: drop-shadow(0px 0px 4rem #69caffde);
+  filter: drop-shadow(0px 0px 4rem #69caffde);
+}
+
+img.framed {
+  box-shadow: -50px -50px 0 -43px #18dec8, 50px 50px 0 -43px #8b5cf6;
+}
+
+.logo_img {
+  -webkit-filter: drop-shadow(0 0 3px #18dec8);
+  filter: drop-shadow(0 0 3px #18dec8);
+  transition: all 0.5s ease-in-out;
+}
+
+.logo_img:hover {
+  -webkit-filter: drop-shadow(0 0 8px #8b5cf6);
+  filter: drop-shadow(0 0 8px #8b5cf6);
+}
+
+.skill_item :hover > .skill_text {
+  @apply bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text;
+}
+
+.service_card:hover {
+  @apply backdrop-blur-sm cursor-pointer;
+}
+
+.service_card:hover > span {
+  @apply opacity-100;
+}
