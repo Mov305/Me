@@ -1,9 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
 // Components
-import Nav from '@/components/nav';
-import Wheel from '@/components/wheel';
-import Particles from '@/components/Particles';
+import Nav from '@components/nav';
+import Wheel from '@components/Wheel';
+import Particles from '@components/Particles';
 // font
 import { teko } from '@/utils/font';
 
