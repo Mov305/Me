@@ -60,6 +60,7 @@ export default function Nav() {
     navs.map((nav) => nav.id),
     80,
   );
+  
 
   return (
     <nav
@@ -77,7 +78,7 @@ export default function Nav() {
               width={120}
               height={120}
               priority={true}
-              className=" w-20 h-20 sm:h-24 sm:w-24 md:w-28 md:h-28 "
+              className=" w-16 md:w-20 ml-1 rounded-full logo_img"
             />
           </Link>
         </div>
@@ -95,7 +96,7 @@ export default function Nav() {
           </Link>
         ))}
       </div>
-      <span className="block bg-slate-400/50 w-0.5 sm:flex-grow my-10"></span>
+      <span className="block bg-gradient-to-b from-violet-500 to-cyan-300 opacity-50 w-0.5 sm:flex-grow my-10"></span>
       <div className="flex justify-around justify-self-end sm:ml-0 sm:flex-col gap-4 items-center">
         {socials.map((social) => (
           <a

@@ -1,7 +1,7 @@
 'use client';
-import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import { motion, scroll } from 'framer-motion';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 // animate the Profile Name
 const nameVariants = {
@@ -9,10 +9,7 @@ const nameVariants = {
     opacity: 0,
     x: -1000,
   },
-  hidden2: {
-    opacity: 0,
-    y: -5,
-  },
+
   visible: {
     opacity: 1,
     x: 0,
@@ -21,37 +18,22 @@ const nameVariants = {
       duration: 0.5,
     },
   },
-  visible2: {
-    opacity: [0, 1],
-    y: [5, 0],
-    transition: {
-      duration: 0.25,
-    },
-  },
 };
 
 export default function Mov() {
   let jobs = ['DESIGNER', 'TYPIST', 'MECHANICAL ENGINEER', 'MODELER', 'MENTOR'];
-  const [wheel, setWheel] = useState(true);
-
-  useEffect(() => {
-    const handleWheel = () => {
-      scroll((progress) => {
-        if (progress > 0.005) {
-          setWheel(false);
-        } else {
-          setWheel(true);
-        }
-      });
-    };
-
-    handleWheel();
-  }, []);
 
   return (
-    <section className="flex items-center text-3xl sm:text-5xl p-5 md:p-20  h-full text-[#fdf3ff]">
-      <motion.div initial="hidden" animate="visible" variants={nameVariants}>
-        <h1 className="text-2xl md:text-3xl font-semibold text-[#cac2ca]">Abdelrhman Samy Saad</h1>
+    <section className="flex items-center text-3xl sm:text-5xl p-2 sm:p-20  h-full text-[#fdf3ff]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={nameVariants}
+        className="flex flex-col items-center sm:items-start justify-center h-full w-full"
+      >
+        <h1 className="text-2xl md:text-4xl font-thin text-[#cac2ca] uppercase">
+          Abdelrhman Samy Saad
+        </h1>
         <h3 className=" mt-4 ">FULL-STACK DEVELOPER</h3>
         <div>
           <span>+ </span>
@@ -68,23 +50,12 @@ export default function Mov() {
                 ease: 'easeInOut',
               },
             }}
-            className="mt-10 text-[#cac2ca] border-2 rounded-full border-[#cac2ca] transition px-10 py-2 hover:bg-[#cac2ca] hover:text-[#fdf3ff] relative"
+            className="mt-10 uppercase font-thin text-[#cac2ca] border-2 rounded-full border-[#cac2ca] transition px-10 py-2 hover:bg-[#cac2ca] hover:text-[#fdf3ff]"
           >
             Contact Me
           </motion.button>
         </Link>
       </motion.div>
-
-      <Link href="/#details">
-        <motion.button
-          initial="hidden2"
-          animate={wheel ? 'visible2' : 'hidden2'}
-          variants={nameVariants}
-          className="absolute flex justify-center top-[90vh] right-[50vw] p-1 -translate-x-1/2 w-8 h-12 border-2 border-[#cac2ca] opacity-75 rounded-full "
-        >
-          <span className="bg-[#cac2ca] w-0.5 h-3 rounded-full animate-pulse"></span>
-        </motion.button>
-      </Link>
     </section>
   );
 }
@@ -98,8 +69,7 @@ const TypeWriter = ({ strings, speed }) => {
   const [isTyping, setIsTyping] = useState(true);
   useEffect(() => {
     const handleType = () => {
-      const i = loopNum % strings.length;
-      const fullText = strings[i];
+      const fullText = strings[loopNum];
 
       setText(
         isDeleting
@@ -108,7 +78,7 @@ const TypeWriter = ({ strings, speed }) => {
       );
       setIsTyping(true);
 
-      setTypingSpeed(isDeleting ? 50 : 200);
+      setTypingSpeed(isDeleting ? 50 : 130);
 
       if (!isDeleting && text === fullText) {
         setIsTyping(false);
@@ -116,7 +86,11 @@ const TypeWriter = ({ strings, speed }) => {
       } else if (isDeleting && text === '') {
         setIsTyping(true);
         setIsDeleting(false);
-        setLoopNum(loopNum + 1);
+        if (loopNum === strings.length - 1) {
+          setLoopNum(0);
+        } else {
+          setLoopNum(loopNum + 1);
+        }
       }
     };
 
@@ -125,7 +99,7 @@ const TypeWriter = ({ strings, speed }) => {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed]);
+  }, [text, isDeleting, loopNum]);
 
   return (
     <>

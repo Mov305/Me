@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 // Components
 import Nav from '@/components/nav';
+import Wheel from '@/components/wheel';
+import Particles from '@/components/Particles';
 // font
 import { teko } from '@/utils/font';
 
@@ -19,14 +21,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="">
         {/* space gradient background */}
         <div
-          className="flex flex-col items-center w-full text-slate-50 relative"
+          className="flex flex-col items-center w-full text-slate-50 relative overflow-hidden"
           style={{
             // space gradient background
             background: 'fixed radial-gradient(#041f3d, #07070c)',
           }}
         >
           <Nav />
-          <main className={`relative md:pl-32 md:w-full z-0 ${teko.className}`}>{children}</main>
+          <Particles />
+          <main className={`relative sm:pl-32 md:w-full z-0 ${teko.className}`}>{children}</main>
+          <div className="absolute top-[88vh] sm:top-[90vh] z-10 left-[50vw] -translate-x-1/2 flex items-center justify-center">
+            <Wheel />
+          </div>
         </div>
       </body>
     </html>
