@@ -24,7 +24,7 @@ export default function Mov() {
   let jobs = ['DESIGNER', 'TYPIST', 'MECHANICAL ENGINEER', 'MODELER', 'MENTOR'];
 
   return (
-    <section className="flex items-center text-3xl sm:text-5xl p-2 sm:p-20  h-full text-[#fdf3ff]">
+    <section className="flex items-center text-3xl sm:text-5xl p-2 sm:p-20  h-full text-pink-50">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -50,7 +50,7 @@ export default function Mov() {
                 ease: 'easeInOut',
               },
             }}
-            className="mt-10 uppercase font-thin text-[#cac2ca] border-2 rounded-full border-[#cac2ca] transition px-10 py-2 hover:bg-[#cac2ca] hover:text-[#fdf3ff]"
+            className="mt-10 uppercase font-thin text-[#cac2ca] border-2 rounded-full border-[#cac2ca] transition px-10 py-2 hover:bg-[#cac2ca] hover:text-pink-50"
           >
             Contact Me
           </motion.button>
