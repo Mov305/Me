@@ -84,3 +84,7 @@ img.framed {
 .service_card:hover > span {
   @apply opacity-100;
 }
+
+canvas {
+  @apply !mx-auto;
+}

@@ -42,9 +42,10 @@ export default function ServiceCard({ service }) {
           <Image
             alt={service.title}
             src={service.img}
-            className=" w-16  rounded-lg object-cover shadow-sm"
+            className=" w-16 rounded-lg object-cover shadow-sm"
             width={150}
             height={150}
+            loading='lazy'
           />
         </div>
       </div>

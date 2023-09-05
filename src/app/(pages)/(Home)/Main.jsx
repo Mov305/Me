@@ -3,12 +3,14 @@ import MainCanvas from './MainCanvas';
 import Mov from './Mov';
 import Details from './Details';
 import Services from './Services';
+import Projects from './Projects';
+import Contact from './Contact';
 import { motion } from 'framer-motion';
 
-const nameVariants = {
+const nameVariants = (x) => ({
   hidden: {
     opacity: 0,
-    x: 100,
+    x: x,
   },
 
   visible: {
@@ -19,7 +21,7 @@ const nameVariants = {
       duration: 1,
     },
   },
-};
+});
 
 export default function Main() {
   return (
@@ -29,23 +31,37 @@ export default function Main() {
           <Mov />
         </div>
         <motion.div
-          variants={nameVariants}
+          variants={nameVariants(100)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           id="details"
-          className=" min-h-screen w-full"
+          className=" min-h-screen "
         >
           <Details />
         </motion.div>
-        <motion.div id="services" className=" w-full min-h-screen">
+        <motion.div
+          variants={nameVariants(-100)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          id="services"
+          className=" w-full min-h-screen"
+        >
           <Services />
         </motion.div>
-        <div id="projects" className=" min-h-screen">
-          projects
-        </div>
-        <div id="contact" className=" min-h-screen">
-          contact
+        <motion.div
+          variants={nameVariants(100)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          id="projects"
+          className=" w-screen md:w-full min-h-screen"
+        >
+          <Projects />
+        </motion.div>
+        <div id="contact" >
+          <Contact />
         </div>
       </main>
       <motion.div

@@ -1,8 +1,57 @@
 'use client';
-import React, { forwardRef, useLayoutEffect, useRef } from 'react';
-import { useGLTF, QuadraticBezierLine } from '@react-three/drei';
+import React, { forwardRef, use, useLayoutEffect, useRef } from 'react';
+import { useGLTF, QuadraticBezierLine, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+
+export const Macbook = forwardRef((props, ref) => {
+  const { nodes } = useGLTF('/models/macbook.glb');
+
+  const texture = useTexture(props.proj);
+
+  // flip texture
+  texture.flipY = false;
+
+  return (
+    <group ref={ref} {...props} dispose={null}>
+      <mesh
+        geometry={nodes.Keyboard.geometry}
+        material={nodes.Keyboard.material}
+        position={nodes.Keyboard.position}
+        material-color="#262626"
+      />
+      <mesh
+        geometry={nodes.Body.geometry}
+        material={nodes.Body.material}
+        position={nodes.Body.position}
+        material-color="#565356"
+      />
+      <mesh
+        geometry={nodes.Touchbar.geometry}
+        material={nodes.Touchbar.material}
+        position={nodes.Touchbar.position}
+        material-color="#2f2f2f"
+      />
+      <mesh
+        geometry={nodes.Frame.geometry}
+        material={nodes.Frame.material}
+        position={nodes.Frame.position}
+        material-color="#565356"
+      />
+      <mesh geometry={nodes.Screen.geometry} position={[0, 0.6, -0.07]} material-color="#ffffff">
+        <meshToonMaterial map={texture} toneMapped={false} />
+        {/* either basic material or matchcap / toon */}
+      </mesh>
+      <mesh
+        geometry={nodes.Logo.geometry}
+        material={nodes.Logo.material}
+        position={nodes.Logo.position}
+        material-color="#ffffff"
+      />
+      {/* <primitive object={nodes.Scene} /> */}
+    </group>
+  );
+});
 
 export const Spaceman = forwardRef(({ children, ...props }, ref) => {
   const { nodes, materials } = useGLTF('/models/space_man.glb');

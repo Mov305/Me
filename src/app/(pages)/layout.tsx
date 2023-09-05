@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           <Nav />
           <Particles />
-          <main className={`relative sm:pl-32 md:w-full z-0 ${teko.className}`}>{children}</main>
+          <main className={`relative md:pl-32 md:w-full z-0 ${teko.className}`}>{children}</main>
           <div className="absolute top-[88vh] sm:top-[90vh] z-10 left-[50vw] -translate-x-1/2 flex items-center justify-center">
             <Wheel />
           </div>

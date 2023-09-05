@@ -33,7 +33,7 @@ export default function Details() {
   };
 
   return (
-    <motion.section className=" bg-slate-500/10 backdrop-blur-sm border min-h-[90vh] border-gray-400/50 shadow-sm rounded-xl m-5">
+    <motion.section className=" bg-slate-500/10 backdrop-blur-sm border min-h-[94vh] border-gray-400/50 shadow-sm rounded-xl m-5">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-16">
           <div className="">
@@ -46,7 +46,7 @@ export default function Details() {
               loading="lazy"
             />
           </div>
-          <div className="lg:py-24 lg:col-span-2">
+          <div className="lg:pt-14 lg:col-span-2">
             <h2 className="text-3xl font-bold sm:text-4xl gradient_title">WHO AM I?!</h2>
 
             <p className="mt-4 sm:text-lg md:text-xl text-gray-200">

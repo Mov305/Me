@@ -65,12 +65,12 @@ export default function Nav() {
   return (
     <nav
       className={
-        'flex sm:flex-col w-full sm:w-auto justify-around sm:justify-normal fixed z-10 top-0 left-0 dark:text-[#b9b6af] sm:min-h-screen sm:items-center pb-2 ' +
+        'flex md:flex-col w-full md:w-auto justify-around md:justify-normal fixed z-10 top-0 left-0 dark:text-[#b9b6af] md:min-h-screen md:items-center md:pb-2 backdrop-blur-sm md:backdrop-blur-0 ' +
         lobster.className
       }
     >
-      <div className=" flex items-center justify-between p-2 ">
-        <div className="flex items-center flex-shrink-0">
+      <div className=" flex items-center justify-between md:p-2 ">
+        <div className="flex items-center md:flex-shrink-0">
           <Link href="/#mov">
             <Image
               src="/profile.png"
@@ -78,12 +78,12 @@ export default function Nav() {
               width={120}
               height={120}
               priority={true}
-              className=" w-16 md:w-20 ml-1 rounded-full logo_img"
+              className=" w-16 md:w-20 md:ml-1 rounded-full logo_img"
             />
           </Link>
         </div>
       </div>
-      <div className="sm:flex flex-col items-center w-full mt-6 p-2 gap-16 hidden">
+      <div className="md:flex flex-col items-center w-full mt-6 p-2 gap-16 hidden">
         {navs.map((nav, index) => (
           <Link href={nav.href} key={index + 'nav_link'} className="nav_link relative">
             <div className="gradient_text transition-all duration-300">{nav.name}</div>
@@ -96,8 +96,8 @@ export default function Nav() {
           </Link>
         ))}
       </div>
-      <span className="block bg-gradient-to-b from-violet-500 to-cyan-300 opacity-50 w-0.5 sm:flex-grow my-10"></span>
-      <div className="flex justify-around justify-self-end sm:ml-0 sm:flex-col gap-4 items-center">
+      <span className="block bg-gradient-to-b from-violet-500 to-cyan-300 opacity-5 md:opacity-50 w-0.5 md:flex-grow md:my-10"></span>
+      <div className="flex justify-around justify-self-end md:ml-0 md:flex-col gap-4 items-center">
         {socials.map((social) => (
           <a
             href={social.href}

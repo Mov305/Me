@@ -45,9 +45,9 @@ export default function Wheel() {
         });
       }}
       variants={nameVariants}
-      className="flex justify-center p-1 -translate-x-1/2 w-8 h-12 border-2 border-[#cac2ca] opacity-75 rounded-full animate-pulse"
+      className="flex justify-center p-1 -translate-x-1/2 w-8 h-12 border-2 border-[#cac2ca] opacity-75 rounded-full"
     >
-      <span className="bg-[#cac2ca] w-0.5 h-3 rounded-full"></span>
+      <span className="bg-[#cac2ca] w-0.5 h-3 rounded-full animate-pulse"></span>
     </motion.button>
   );
 }

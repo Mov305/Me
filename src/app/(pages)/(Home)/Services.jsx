@@ -91,7 +91,7 @@ export default function App() {
           style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
           className=" p-1 sm:p-3 w-full text-xl sm:text-2xl font-thin uppercase mt-5 sm:mt-10 bg-slate-500/10 backdrop-blur-sm shadow-sm rounded-xl  "
         >
-          <ul className="flex flex-col gap-2 md:flex-row justify-between w-full p-5 ">
+          <ul className=" hidden md:flex flex-col gap-2 md:flex-row justify-between w-full p-5 ">
             {tabs.map((item) => (
               <li
                 key={item + 'tab'}
@@ -121,7 +121,7 @@ export default function App() {
               delay: 3000,
               disableOnInteraction: false,
             }}
-            className="!max-w-[85vw] sm:!max-w-[70vw] md:!max-w-none"
+            className="!max-w-[85vw] md:!max-w-none"
           >
             {filteredSkills &&
               filteredSkills.map((skill) => (
