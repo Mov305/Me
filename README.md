@@ -48,7 +48,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:Peter1907/portfolio-v2.git
+  git clone https://github.com/Mov305/Me
 ```
 
 Or download the [zip](https://github.com/Mov305/Me/archive/refs/heads/dev.zip) file
