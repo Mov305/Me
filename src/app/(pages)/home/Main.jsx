@@ -17,7 +17,7 @@ const nameVariants = (x) => ({
     opacity: 1,
     x: 0,
     transition: {
-      delay: 0.8,
+      delay: 0.4,
       duration: 1,
     },
   },

@@ -1,5 +1,5 @@
 'use client';
-import React, { forwardRef, use, useLayoutEffect, useRef } from 'react';
+import React, { forwardRef, useLayoutEffect, useRef } from 'react';
 import { useGLTF, QuadraticBezierLine, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';

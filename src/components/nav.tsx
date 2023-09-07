@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { useScrolly } from '@/utils/hooks';
 
 // font
@@ -12,22 +13,22 @@ import { BsGithub, BsFacebook, BsLinkedin, BsTwitter } from 'react-icons/bs';
 const navs = [
   {
     name: 'Details',
-    href: '/#details',
+    href: '/home#details',
     id: 'details',
   },
   {
     name: 'Services',
-    href: '/#services',
+    href: '/home#services',
     id: 'services',
   },
   {
     name: 'Projects',
-    href: '/#projects',
+    href: '/home#projects',
     id: 'projects',
   },
   {
     name: 'Contact',
-    href: '/#contact',
+    href: '/home#contact',
     id: 'contact',
   },
 ];
@@ -60,7 +61,6 @@ export default function Nav() {
     navs.map((nav) => nav.id),
     80,
   );
-  
 
   return (
     <nav

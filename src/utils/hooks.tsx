@@ -8,6 +8,7 @@ const isBetween = (value: number, min: number, max: number) => value >= min && v
 
 // scroll hook
 export const useScrolly = (ids: string[], offset: number = 0) => {
+  if (typeof window === 'undefined') return null;
   const [activeId, setActiveId] = useState<string | null>('');
 
   useLayoutEffect(() => {

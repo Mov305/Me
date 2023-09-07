@@ -39,7 +39,7 @@ export default function Mov() {
           <span>+ </span>
           <TypeWriter strings={jobs} speed={200} />
         </div>
-        <Link href="/#contact">
+        <Link href="/home#contact">
           <motion.button
             whileHover={{
               scale: 1.06,

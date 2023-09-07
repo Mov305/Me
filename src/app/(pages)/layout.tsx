@@ -1,10 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 // Components
-import Nav from '@components/nav';
-import Wheel from '@components/Wheel';
-import Particles from '@components/Particles';
-// font
+
 import { teko } from '@/utils/font';
 
 export const metadata: Metadata = {
@@ -18,22 +15,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className={teko.className}>
         {/* space gradient background */}
-        <div
-          className="flex flex-col items-center w-full text-slate-50 relative overflow-hidden"
-          style={{
-            // space gradient background
-            background: 'fixed radial-gradient(#041f3d, #07070c)',
-          }}
-        >
-          <Nav />
-          <Particles />
-          <main className={`relative md:pl-32 md:w-full z-0 ${teko.className}`}>{children}</main>
-          <div className="absolute top-[88vh] sm:top-[90vh] z-10 left-[50vw] -translate-x-1/2 flex items-center justify-center">
-            <Wheel />
-          </div>
-        </div>
+        {children}
       </body>
     </html>
   );
