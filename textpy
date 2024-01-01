@@ -1,0 +1,46 @@
+PyPI doesn't accept new registrations now
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+people_data = [
+    {"name": "Alice", "age": 25, "occupation": "Engineer"},
+    {"name": "Bob", "age": 30, "occupation": "Teacher"},
+    {"name": "Charlie", "age": 22, "occupation": "Student"},
+    {"name": "David", "age": 35, "occupation": "Doctor"},
+    {"name": "Emma", "age": 28, "occupation": "Software Developer"},
+    {"name": "Frank", "age": 40, "occupation": "Architect"},
+    {"name": "Grace", "age": 32, "occupation": "Graphic Designer"},
+    {"name": "Henry", "age": 27, "occupation": "Data Scientist"},
+    {"name": "Ivy", "age": 29, "occupation": "Marketing Specialist"},
+    {"name": "Jack", "age": 33, "occupation": "Financial Analyst"},
+    {"name": "Katherine", "age": 45, "occupation": "Writer"},
+    {"name": "Leo", "age": 38, "occupation": "Chef"},
+    {"name": "Mia", "age": 26, "occupation": "Nurse"},
+    {"name": "Nathan", "age": 31, "occupation": "Pharmacist"},
+    {"name": "Olivia", "age": 34, "occupation": "Human Resources Manager"},
+    {"name": "Peter", "age": 36, "occupation": "Mechanical Engineer"},
+    {"name": "Quinn", "age": 23, "occupation": "Artist"},
+    {"name": "Ryan", "age": 37, "occupation": "Lawyer"},
+    {"name": "Samantha", "age": 31, "occupation": "Entrepreneur"},
+    {"name": "Tyler", "age": 39, "occupation": "Project Manager"}
+]
+
+pd.DataFrame(people_data).to_csv("people.csv")
+df = pd.read_csv("people.csv")
+print("Mean",df["age"].mean())
+print("Median" ,df["age"].median())
+print("Mode",df["age"].mode())
+print("std",df["age"].std())
+print("Describe",df["age"].describe())
+print("Counts",df["age"].value_counts())
+print(df["age"].value_counts(normalize=True))
+print(df["age"].value_counts(bins=5))
+
+df["Old"] = np.where(df["age"]>30, True, False)
+print(df)
+
+#plotting
+plt.hist(df["age"], bins=5)
+plt.show()
+
